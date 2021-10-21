@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="confetti.css">
+
+</head>
+
+<body>
+
+
+<main>
+    <article>
+        <h3 id="id_winner_name"></h3>
+        <img id="id_prize" src="">
+        <canvas class="confetti" id="canvas">
+        </canvas>
+    </article>
+
+</main>
+<script>
+    //------------Parameters-------------
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const data = urlParams.get('data');
+document.getElementById("id_winner_name").innerHTML = data;
+
+</script>
+<script src="confetti.js"></script>
+</body>
+
+
+</html>
