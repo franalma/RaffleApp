@@ -13,11 +13,13 @@
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
-        <ImageView
+        <ImageView android:id="@+id/id_event_logo"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo_uem"
+            android:layout_marginTop="150dp"
+            android:paddingBottom="50dp"
+            android:src="@drawable/logo_uclm_politecnica"
             />
         <TextView
             android:layout_width="match_parent"

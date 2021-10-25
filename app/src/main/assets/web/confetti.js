@@ -25,6 +25,10 @@ const colors = [
 { front: 'purple', back: 'darkpurple' },
 { front: 'turquoise', back: 'darkturquoise' }];
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const data = urlParams.get('data');
+const img_path = urlParams.get('prize');
 
 //-----------Functions--------------
 resizeCanvas = () => {
@@ -98,17 +102,20 @@ render = () => {
 
     // Reset transform matrix
     ctx.setTransform(1, 0, 0, 1, 0, 0);
+
   });
 
+    addImage(ctx, img_path);
+    addText(ctx, data);
   // Fire off another round of confetti
   if (confetti.length <= 10) initConfetti();
-
   window.requestAnimationFrame(render);
 };
 
 //---------Execution--------
 initConfetti();
 render();
+
 
 //----------Resize----------
 window.addEventListener('resize', function () {
@@ -119,3 +126,21 @@ window.addEventListener('resize', function () {
 window.addEventListener('click', function () {
   initConfetti();
 });
+
+function addText(ctx,value){
+    console.log("ctx: "+ctx);
+    ctx.font = "40px Arial";
+    let values = value.split(" ");
+    ctx.fillText(values[0], 100, 100);
+    ctx.fillText(values[1], 100, 145);
+    ctx.fillText(values[2], 100, 195);
+
+}
+
+function addImage(ctx, img){
+    var image = new Image();
+    image.src = 'img/'+img;
+    ctx.drawImage(image, 80,300);
+}
+
+

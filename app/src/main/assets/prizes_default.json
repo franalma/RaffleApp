@@ -1,0 +1,26 @@
+{
+  "contest_name": "Universidad de Castilla La Mancha",
+  "event_main_logo": "",
+  "unknown_gift": "img_unknown_gift.png",
+  "prizes": [
+    {
+      "name": "Prize 1",
+      "img": "img_watch_gt_pro2.png"
+    },
+    {
+      "name": "Prize 2",
+      "img": "img_huawei_band.png"
+    },
+    {
+      "name": "Prize 3",
+      "img": "img_huawei_band.png"
+    },
+    {
+      "name": "Prize 4",
+      "img": "img_huawei_band.png"
+    }
+
+
+
+  ]
+}

@@ -25,7 +25,13 @@ public class ConfettiActivity extends AppCompatActivity {
             }
         });
         this.data = getIntent().getStringExtra("data");
-        webView.loadUrl("file:///android_asset/web/result.html?data="+data);
+        try{
+            Prize prize = PrizeController.getInstance(null).getPrizeForPosition(getIntent().getIntExtra("gift_info",-1));
+            webView.loadUrl("file:///android_asset/web/result.html?data="+data+"&prize="+prize.getImg());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 
