@@ -1,7 +1,4 @@
 
-
-
-
 //-----------Var Inits--------------
 canvas = document.getElementById("canvas");
 ctx = canvas.getContext("2d");
@@ -29,6 +26,9 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const data = urlParams.get('data');
 const img_path = urlParams.get('prize');
+const posX = urlParams.get('x');
+const posY = urlParams.get('y');
+
 
 //-----------Functions--------------
 resizeCanvas = () => {
@@ -105,7 +105,7 @@ render = () => {
 
   });
 
-    addImage(ctx, img_path);
+    addImage(ctx, img_path, posX, posY);
     addText(ctx, data);
   // Fire off another round of confetti
   if (confetti.length <= 10) initConfetti();
@@ -132,15 +132,21 @@ function addText(ctx,value){
     ctx.font = "40px Arial";
     let values = value.split(" ");
     ctx.fillText(values[0], 100, 100);
-    ctx.fillText(values[1], 100, 145);
-    ctx.fillText(values[2], 100, 195);
+    if (values.length >=2){
+        ctx.fillText(values[1], 100, 145);
+    }
+    if (values.length >=3){
+        ctx.fillText(values[2], 100, 195);
+    }
+
+
 
 }
 
 function addImage(ctx, img){
     var image = new Image();
     image.src = 'img/'+img;
-    ctx.drawImage(image, 80,300);
+    ctx.drawImage(image, posX,posY);
 }
 
 

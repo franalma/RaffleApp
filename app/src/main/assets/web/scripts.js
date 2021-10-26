@@ -24,7 +24,7 @@ function addData(value) {
 function initWheel() {
     console.log("function initWheel()");
 
-    var padding = { top: 100, right: 50, bottom: 0, left: 0 },
+    var padding = { top: 100, right: 60, bottom: 0, left: 0 },
         w = 420 - padding.left - padding.right,
         h = 450 - padding.top - padding.bottom,
         r = Math.min(w, h) / 2,

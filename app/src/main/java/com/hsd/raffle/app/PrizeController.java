@@ -46,7 +46,10 @@ public class PrizeController {
             JSONArray jarray = values.getJSONArray("prizes");
             for (int i = 0; i< jarray.length(); i++){
                 JSONObject joc = jarray.getJSONObject(i);
-                this.prizes.add(new Prize(joc.getString("name"), joc.getString("img")));
+                this.prizes.add(new Prize(joc.getString("name"),
+                        joc.getString("img"),
+                        joc.getInt("posX"),
+                        joc.getInt("posY")));
             }
         } catch (Exception e) {
             e.printStackTrace();

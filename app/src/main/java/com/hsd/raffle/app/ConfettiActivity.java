@@ -27,7 +27,7 @@ public class ConfettiActivity extends AppCompatActivity {
         this.data = getIntent().getStringExtra("data");
         try{
             Prize prize = PrizeController.getInstance(null).getPrizeForPosition(getIntent().getIntExtra("gift_info",-1));
-            webView.loadUrl("file:///android_asset/web/result.html?data="+data+"&prize="+prize.getImg());
+            webView.loadUrl("file:///android_asset/web/result.html?data="+data+"&prize="+prize.getImg()+"&x="+prize.getPosX()+"&y="+prize.getPosY());
         }catch(Exception e){
             e.printStackTrace();
         }

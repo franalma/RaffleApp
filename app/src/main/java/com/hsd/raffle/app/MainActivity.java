@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private final static int CAMERA_REQ_CODE = 2000;
     private String readValues[];
     private ArrayList<Integer> selectedNumbers = new ArrayList();
-    private final static int NUMBER_OF_GIFS = 4;
+    private final static int NUMBER_OF_GIFS = 3;
     private WebView webView;
     private static  int currentGift = NUMBER_OF_GIFS-1;
     private JSONArray jarray = new JSONArray();
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         String [] readValues = data.split(",");
         try{
             jarray = new JSONArray();
-            for (int i = 0; i < readValues.length-1; i++){
+            for (int i = 0; i < readValues.length; i++){
                 JSONObject joc = new JSONObject();
                 joc.put("label", readValues[i]);
                 joc.put("value", readValues[i]);
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void removeItem(String data){
-        for (int i = 0; i<jarray.length()-1; i++){
+        for (int i = 0; i<jarray.length(); i++){
             try{
                 JSONObject item = jarray.getJSONObject(i);
                 if (item.getString("value").equals(data)){

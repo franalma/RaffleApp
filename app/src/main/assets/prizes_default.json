@@ -5,22 +5,21 @@
   "prizes": [
     {
       "name": "Prize 1",
-      "img": "img_watch_gt_pro2.png"
+      "img": "uclm/img_gt_pro2.png",
+      "posX": 70,
+      "posY": 300
     },
     {
       "name": "Prize 2",
-      "img": "img_huawei_band.png"
+      "img": "uclm/img_freebuds_pro.png",
+      "posX": 60,
+      "posY": 300
     },
     {
       "name": "Prize 3",
-      "img": "img_huawei_band.png"
-    },
-    {
-      "name": "Prize 4",
-      "img": "img_huawei_band.png"
+      "img": "uclm/img_band_6.png",
+      "posX": 70,
+      "posY": 350
     }
-
-
-
   ]
 }
